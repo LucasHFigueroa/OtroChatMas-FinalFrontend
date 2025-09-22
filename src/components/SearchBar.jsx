@@ -1,9 +1,11 @@
+import styles from "../styles/components/SearchBar.module.css"
+
 const SearchBar = () => {
     return (
         <>
-        <div className="search-box">
+        <div className={styles.searchBox}>
             <button><i className="fas fa-search"></i></button>
-            <input type="search" placeholder="Search..." id="search-input"></input>
+            <input type="search" placeholder="Search..." id={styles.searchInput}></input>
         </div>
         </>
     )

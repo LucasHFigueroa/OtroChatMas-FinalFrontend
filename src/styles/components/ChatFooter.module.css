@@ -1,0 +1,47 @@
+.chatFooter {
+    padding: 20px;
+    align-content: flex-end;
+}
+
+.textBox {
+    display: flex;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: white;
+}
+
+.textBox button {
+    background-color: #E9ECEF;
+    border: none;
+    padding: 8px 12px;
+    transition: 0.3s ease;
+}
+
+.textBox button:hover {
+    background-color: #c4c4c5;
+    cursor: pointer;
+}
+
+.textBox i {
+    color: #777777;
+}
+
+.textBox input {
+    border: none;
+    margin-left: 8px;
+    width: 100%;
+    font-size: 14px;
+    color: #333333;
+}
+
+.textBox input::placeholder {
+    font-style: italic;
+    color: #666;
+    opacity: 0.8;
+}
+
+.textBox input:focus {
+    outline: none;
+    border: none;
+}

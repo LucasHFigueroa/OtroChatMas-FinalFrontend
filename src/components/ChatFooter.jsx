@@ -1,9 +1,11 @@
+import styles from "../styles/components/ChatFooter.module.css"
+
 const ChatFooter = () => {
     return (
-        <footer class="chat-footer">
-            <div class="text-box">
-                <input type="text" placeholder="Enter text here..." id="input-message" />
-                <button id="send-button"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <footer className={styles.chatFooter}>
+            <div className={styles.textBox}>
+                <input type="text" placeholder="Enter text here..." id={styles.inputMessage} />
+                <button id={styles.sendButton}><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
             </div>
         </footer>
     )

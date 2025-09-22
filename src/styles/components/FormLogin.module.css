@@ -1,0 +1,30 @@
+.inputBox {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    margin: 20px 0;
+    border-radius: 8px;
+    width: 100%;
+    background-color: white;
+}
+
+.inputBox i {
+    color: #777777;
+    margin: 8px;
+}
+
+.inputBox input {
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    color: #7b7b7b;
+}
+
+
+.inputBox input:focus {
+    outline: none;
+    font-style: normal;
+    color: #333;
+}

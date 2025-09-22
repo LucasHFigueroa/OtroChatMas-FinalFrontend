@@ -1,0 +1,57 @@
+.timestampSent {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-right: 4px;
+}
+
+.timestamp {
+    font-size: 0.65rem;
+    color: #8f8f8f;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.messageSent {
+    display: flex;
+    background-color: #ddf0f4;
+    color: #333333;
+    padding: 20px 16px;
+    border-radius: 4px;
+    max-width: max-content;
+    align-self: flex-end;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.messageSent i {
+    font-size: 0.8rem;
+    border-radius: 50%;
+}
+
+.messageReceived {
+    display: flex;
+    background-color: #f6f6f6;
+    color: #333333;
+    padding: 20px 16px;
+    border-radius: 4px;
+    max-width: max-content;
+    align-self: flex-start;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.messageReceived i {
+    font-size: 0.8rem;
+    border-radius: 50%;
+}
+
+.seen {
+    color: #00d50b;
+    background-color: white;
+}
+
+.noSeen {
+    color: #ffbb00;
+}

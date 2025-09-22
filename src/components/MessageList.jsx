@@ -1,9 +1,10 @@
 import Message from "./Message";
+import styles from "../styles/components/MessageList.module.css"
 
 const MessageList = () => {
     return (
         <>
-            <section class="message-list">
+            <section className={styles.messageList}>
                 <Message />
             </section>
         </>
