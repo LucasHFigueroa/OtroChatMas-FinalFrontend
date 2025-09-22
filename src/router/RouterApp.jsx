@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 
 const RouterApp = () => {
     return (
-        <HashRouter basename="/OtroChatMas-FinalFrontend">
+        <HashRouter>
             <Routes>
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/" element={<Login />} />
