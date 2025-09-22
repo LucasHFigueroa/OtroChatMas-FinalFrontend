@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 
 const RouterApp = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/OtroChatMas-FinalFrontend">
             <Routes>
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/" element={<Login />} />
