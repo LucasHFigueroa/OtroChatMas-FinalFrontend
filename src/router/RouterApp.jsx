@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Chat from "../pages/Chat";
 import Login from "../pages/Login";
 
@@ -8,12 +8,12 @@ import Login from "../pages/Login";
 
 const RouterApp = () => {
     return (
-        <BrowserRouter basename="/OtroChatMas-FinalFrontend">
+        <HashRouter basename="/OtroChatMas-FinalFrontend">
             <Routes>
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/" element={<Login />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
