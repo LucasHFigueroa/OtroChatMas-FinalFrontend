@@ -11,7 +11,7 @@ const RouterApp = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/chat" element={<Chat />} />
-                <Route path="/" element={<Login />} />
+                <Route path="/OtroChatMas-FinalFrontend" element={<Login />} />
             </Routes>
         </BrowserRouter>
     );
