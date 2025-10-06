@@ -1,26 +1,25 @@
 .principal {
-    display: flex;
-    height: 100dvh;
+  display: flex;
+  height: 100dvh;
 }
 
 .chatLayout {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
 @media (max-width: 578px) {
-    .principal {
-        display: flex;
-        flex-direction: column;
-        height: 100dvh;
-        overflow: hidden;
-    }
+  .principal {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+  }
 
-    .chatLayout {
-        width: 100%;
-        height: 100%;
-    }
+  .chatLayout {
+    width: 100%;
+    height: 100%;
+  }
 }

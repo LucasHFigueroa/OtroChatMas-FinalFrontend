@@ -2,23 +2,23 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <script>
-        // Redirigir cualquier ruta a index.html (manteniendo el pathname)
-        (function () {
-            var redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            if (redirect && redirect !== location.href) {
-                history.replaceState(null, null, redirect);
-            }
-        })();
-    </script>
-    <meta http-equiv="refresh" content="0; url=./index.html" />
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+
+    (function () {
+      const redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=./index.html" />
 </head>
 
 <body>
-    <p>Redirigiendo...</p>
+  <p>Redirigiendo...</p>
 </body>
 
 </html>

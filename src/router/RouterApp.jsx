@@ -7,14 +7,14 @@ import Login from "../pages/Login";
 // 2 - elemento -> que queremos mostrar?
 
 const RouterApp = () => {
-    return (
-        <BrowserRouter basename="/OtroChatMas-FinalFrontend">
-            <Routes>
-                <Route path="/chat" element={<Chat />} />
-                <Route path="/" element={<Login />} />
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter basename="/OtroChatMas-FinalFrontend">
+      <Routes>
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default RouterApp;

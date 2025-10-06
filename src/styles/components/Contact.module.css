@@ -1,40 +1,40 @@
 .contact {
-    display: flex;
-    gap: 12px;
-    font-weight: 400;
-    padding: 12px;
-    max-width: 100%;
-    align-items: center;
+  display: flex;
+  gap: 12px;
+  font-weight: 400;
+  padding: 12px;
+  max-width: 100%;
+  align-items: center;
 }
 
 .contact:hover {
-    background-color: #EFEFEF;
-    cursor: pointer;
-    border-radius: 8px;
+  background-color: #efefef;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .contact p {
-    font-size: 0.75rem;
-    color: #8f8f8f;
+  font-size: 0.75rem;
+  color: #8f8f8f;
 }
 
 .fotoPerfil {
-    max-width: 60px;
-    border-radius: 100%;
+  max-width: 60px;
+  border-radius: 100%;
 }
 
 .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
 }
 
 .online {
-    background-color: #00d50b;
+  background-color: #00d50b;
 }
 
 .offline {
-    background-color: #d9534f;
+  background-color: #d9534f;
 }
