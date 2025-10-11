@@ -1,5 +1,5 @@
 import SearchBar from "./SearchBar";
-import Contact from "./Contact";
+import UserList from "./UserList";
 import styles from "../styles/components/SideBar.module.css";
 
 const SideBar = () => {
@@ -7,9 +7,7 @@ const SideBar = () => {
     <>
       <aside className={styles.sidebar}>
         <SearchBar />
-        <ul className={styles.contactList}>
-          <Contact />
-        </ul>
+        <UserList />
       </aside>
     </>
   );

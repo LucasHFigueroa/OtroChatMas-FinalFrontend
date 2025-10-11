@@ -1,14 +1,16 @@
-import FormLogin from "../components/FormLogin";
-import styles from "../styles/pages/Login.module.css";
+import FormRegister from "./FormRegister";
+import styles from "../styles/components/Register.module.css";
 
-const Login = () => {
+const Register = ({ onToggleView }) => {
   return (
     <>
-      <section className={styles.layoutLogin}>
-        <h1>"Otro chat más"</h1>
-        <div className={styles.formContainerLogin}>
-          <h2>Que bueno verte otra vez!</h2>
-          <FormLogin />
+      <section className={styles.layoutRegistration}>
+        <h1 className={styles.title}>"Desarrollo FrontEnd"</h1>
+        <div className={styles.formContainerRegistration}>
+          <h2 className={styles.subtitle}>
+            Esto es una simulación, poné cualquier cosa
+          </h2>
+          <FormRegister />
           <p>O iniciá sesión con</p>
           <div className={styles.apis}>
             <a href="">
@@ -85,8 +87,11 @@ const Login = () => {
               </svg>
             </a>
           </div>
-          <button type="button" className={styles.btnRegistro}>
-            Tengo que registrarme!
+          <button 
+            type="submit" 
+            className={styles.btnLogin}
+            onClick={onToggleView}>
+            Volver al inicio
           </button>
         </div>
       </section>
@@ -94,4 +99,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

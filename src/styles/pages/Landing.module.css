@@ -1,0 +1,21 @@
+.authContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.formWrapper {
+  display: flex;
+  width: 200%;
+  transition: transform 0.6s ease-in-out;
+}
+
+
+.form {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.authContainer.registerActive .formWrapper {
+  transform: translateX(-50%);
+}

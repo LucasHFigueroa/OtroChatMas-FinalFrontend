@@ -1,9 +1,12 @@
 import styles from "../styles/components/Contact.module.css";
 import avatar from "../assets/images/avatars/avatar1.png";
 
-const Contact = () => {
+const UserList = () => {
+
+  
+
   return (
-    <>
+    <ul className={styles.contactList}>
       <li className={styles.contact}>
         <img
           src={avatar}
@@ -17,8 +20,8 @@ const Contact = () => {
           </p>
         </div>
       </li>
-    </>
+    </ul>
   );
 };
 
-export default Contact;
+export default UserList;

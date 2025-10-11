@@ -15,25 +15,6 @@ hr {
   border: 1px solid #eaeaea;
 }
 
-h1 {
-  font-family: "Satisfy", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 100px;
-  transform: rotate(-4deg);
-  margin-left: 10%;
-  margin-top: 20px;
-  color: #0980b7;
-  text-shadow: -4px 4px #ffffff;
-  align-self: flex-start;
-}
-
-h2 {
-  font-family: "satisfy", cursive;
-  color: #903a1a;
-  font-size: 32px;
-}
-
 h4 {
   font-weight: 500;
 }
