@@ -1,16 +1,16 @@
-import styles from "../styles/components/Message.module.css";
+import styles from "../styles/components/Message.module.css"
 
-const message = () => {
+const Message = ({ text, time }) => {
   return (
     <div className={styles.messageSent}>
-      <p>Hi Aiden, how are you? How is the project coming along?</p>
-      <p className={styles.timestamp}>10:10</p>
+      <p>{text}</p>
+      <p className={styles.timestamp}>{time}</p>
       <i
         className={`fa-solid fa-circle-check ${styles.seen}`}
         aria-hidden="true"
       ></i>
     </div>
-  );
-};
+  )
+}
 
-export default message;
+export default Message

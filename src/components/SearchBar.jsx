@@ -1,20 +1,23 @@
-import styles from "../styles/components/SearchBar.module.css";
+import styles from "../styles/components/SearchBar.module.css"
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
+  const handleChange = (event) => {
+    onSearch(event.target.value)
+  }
+
   return (
-    <>
-      <div className={styles.searchBox}>
-        <button>
-          <i className="fas fa-search"></i>
-        </button>
-        <input
-          type="search"
-          placeholder="Search..."
-          id={styles.searchInput}
-        ></input>
-      </div>
-    </>
-  );
-};
+    <div className={styles.searchBox}>
+      <button>
+        <i className="fas fa-search"></i>
+      </button>
+      <input
+        type="search"
+        placeholder="Buscar contacto..."
+        id={styles.searchInput}
+        onChange={handleChange}
+      />
+    </div>
+  )
+}
 
-export default SearchBar;
+export default SearchBar
