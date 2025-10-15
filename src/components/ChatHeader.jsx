@@ -11,7 +11,11 @@ const ChatHeader = () => {
   return (
     <header className={styles.chatHeader}>
       <div className={styles.contactHeader}>
-        <img src={avatar} alt={`Avatar de ${user.name}`} className={styles.fotoPerfil} />
+        <img
+          src={user.avatar}
+          alt={`Foto de ${user.name}`}
+          className={styles.fotoPerfil}
+        />
         <div>
           <h4>{user.name}</h4>
           <p>

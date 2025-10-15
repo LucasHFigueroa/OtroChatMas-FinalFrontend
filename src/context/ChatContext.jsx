@@ -1,4 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react"
+import avatar1 from "../assets/images/avatars/avatar1.png"
+import avatar2 from "../assets/images/avatars/avatar2.png"
+import avatar3 from "../assets/images/avatars/avatar3.png"
+import avatar4 from "../assets/images/avatars/avatar4.png"
+import avatar5 from "../assets/images/avatars/avatar5.png"
+import avatar6 from "../assets/images/avatars/avatar6.png"
+import avatar7 from "../assets/images/avatars/avatar7.png"
+import avatar8 from "../assets/images/avatars/avatar8.png"
 
 const ChatContext = createContext ()
 
@@ -18,13 +26,17 @@ const ChatProvider = ({children}) => {
           name: "Juan Perez",
           status: "online",
           lastSeen: "",
-          messages: [{ id: 1, text: "Hola, como estás?", time: "12:00" }],
+          avatar: avatar1,
+          messages: [
+            { id: 1, text: "Hola, como estás?", time: "12:00" }
+          ],
         },
         {
           id: 2,
           name: "Marita Rodriguez",
           status: "offline",
           lastSeen: "3 hours ago",
+          avatar: avatar2,
           messages: [
             { id: 1, text: "RESPONDEEEE QUE TENGO HAMBREE!", time: "15:00" },
             { id: 2, text: "estoy desde las 12 en el banco!!", time: "15:10" },
