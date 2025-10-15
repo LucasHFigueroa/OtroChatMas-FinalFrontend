@@ -1,4 +1,4 @@
-import styles from "../styles/components/Contact.module.css"
+import styles from "../styles/components/UserList.module.css"
 
 
 const UserList = ({ users, onSelect }) => {
@@ -9,7 +9,6 @@ const UserList = ({ users, onSelect }) => {
         <p className={styles.noResults}>No se encontraron resultados...</p>
       ) : (
         users.map((user) => (
-          console.log("Renderizando usuario:", user.name, user.avatar),
           <li
             key={user.id}
             className={styles.contact}

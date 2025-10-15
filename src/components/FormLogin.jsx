@@ -20,7 +20,6 @@ const FormLogin = () => {
     setMessage("")
     setError("")
 
-    // Obtener usuario del localStorage
   const storedUser = JSON.parse(localStorage.getItem("userData"))
 
     if (!storedUser) {
@@ -32,6 +31,7 @@ const FormLogin = () => {
          usernameOrEmail === storedUser.email) &&
          password === storedUser.password ) {
       setMessage("Pasá, sentite como en casa")
+      localStorage.setItem("isLoggedIn", "true")
       setTimeout(() => {
         navigate("/chat")
       }, 3000)
