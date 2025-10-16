@@ -1,0 +1,194 @@
+import { useState, useEffect } from "react"
+import styles from "../styles/components/SettingsPopup.module.css"
+
+// Avatares
+import avatar1 from "../assets/images/avatars/avatar1.png"
+import avatar2 from "../assets/images/avatars/avatar2.png"
+import avatar3 from "../assets/images/avatars/avatar3.png"
+import avatar4 from "../assets/images/avatars/avatar4.png"
+import avatar5 from "../assets/images/avatars/avatar5.png"
+
+// Fondos
+import bg1 from "../assets/images/backgrounds/bg1.png"
+
+const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5]
+const backgrounds = [bg1]
+
+const SettingsPopup = ({ onClose }) => {
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    avatar: avatar1,
+    background: "",
+  })
+
+  const [showAvatarGallery, setShowAvatarGallery] = useState(false)
+  const [showBgGallery, setShowBgGallery] = useState(false)
+  const [confirmPassword, setConfirmPassword] = useState("")
+
+  // Cargar datos del usuario guardados
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("userData"))
+    if (storedUser) setUser(storedUser)
+  }, [])
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setUser({ ...user, [name]: value })
+  }
+
+  const handleAvatarSelect = (avatar) => {
+    setUser({ ...user, avatar })
+    setShowAvatarGallery(false)
+  }
+
+  const handleBackgroundSelect = (bg) => {
+    setUser({ ...user, background: bg })
+    setShowBgGallery(false)
+  }
+
+  const handleSave = () => {
+    if (confirmPassword && confirmPassword !== user.password) {
+      alert("Las contraseñas no coinciden.")
+      return
+    }
+    localStorage.setItem("userData", JSON.stringify(user))
+    alert("Cambios guardados correctamente.")
+    onClose()
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn")
+    window.location.href = "/"
+  }
+
+
+  return (
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        {/* Encabezado */}
+        <div className={styles.header}>
+          <div className={styles.avatarContainer}>
+            <img src={user.avatar} alt="Avatar" className={styles.avatar} />
+            <button
+              className={styles.changeAvatarBtn}
+              onClick={() => {
+                setShowAvatarGallery(true)
+                setShowBgGallery(false)
+              }}
+            >
+              <i className="fa fa-user-edit"></i>
+            </button>
+          </div>
+          <div className={styles.userInfo}>
+            <h2>{user.username}</h2>
+            <p>{user.email}</p>
+          </div>
+          <button className={styles.closeBtn} onClick={onClose}>
+            <i className="fa fa-times"></i>
+          </button>
+        </div>
+
+        {/* Cuerpo */}
+        <div className={styles.body}>
+          <div className={styles.sidebar}>
+            <button
+              onClick={() => {
+                setShowAvatarGallery(false)
+                setShowBgGallery(false)
+              }}
+            >
+              <i className="fa fa-pen"></i> Editar perfil
+            </button>
+            <button
+              onClick={() => {
+                setShowBgGallery(true)
+                setShowAvatarGallery(false)
+              }}
+            >
+              <i className="fa fa-image"></i> Cambiar fondo del chat
+            </button>
+            <button className={styles.logout} onClick={handleLogout}>
+              <i className="fa fa-sign-out"></i> Cerrar sesión
+            </button>
+          </div>
+
+          {/* Galería de Avatares */}
+          {showAvatarGallery && (
+            <div className={styles.gallery}>
+              <h3>Seleccionar avatar</h3>
+              <div className={styles.grid}>
+                {avatars.map((a, i) => (
+                  <img
+                    key={i}
+                    src={a}
+                    alt={`avatar-${i}`}
+                    onClick={() => handleAvatarSelect(a)}
+                    className={`${styles.thumb} ${user.avatar === a ? styles.active : ""}`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Galería de Fondos */}
+          {showBgGallery && (
+            <div className={styles.gallery}>
+              <h3>Seleccionar fondo del chat</h3>
+              <div className={styles.grid}>
+                {backgrounds.map((b, i) => (
+                  <img
+                    key={i}
+                    src={b}
+                    alt={`bg-${i}`}
+                    onClick={() => handleBackgroundSelect(b)}
+                    className={`${styles.thumb} ${user.background === b ? styles.active : ""}`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Formulario de edición */}
+          {!showAvatarGallery && !showBgGallery && (
+            <div className={styles.form}>
+              <label>Usuario</label>
+              <input
+                type="text"
+                name="username"
+                value={user.username}
+                onChange={handleChange}
+              />
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+              />
+              <label>Contraseña</label>
+              <input
+                type="password"
+                name="password"
+                value={user.password}
+                onChange={handleChange}
+              />
+              <label>Confirmar contraseña nueva</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button className={styles.saveBtn} onClick={handleSave}>
+                <i className="fa fa-save"></i> Guardar cambios
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SettingsPopup

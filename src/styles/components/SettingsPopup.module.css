@@ -1,0 +1,233 @@
+/* Fondo oscuro translúcido */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Caja blanca central */
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 85%;
+  max-width: 900px;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  font-family: "Inter", sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #b5d3e2, #d8e9ef);
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.avatarContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.changeAvatarBtn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #f8f8f8;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userInfo {
+  flex: 1;
+  padding-left: 16px;
+}
+
+.userInfo h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.userInfo p {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* --- BODY --- */
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* COLUMNA IZQUIERDA */
+.sidebar {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+  border-right: 1px solid #eee;
+  padding-right: 20px;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #222;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  color: #007b91;
+}
+
+.logout {
+  background: #c62828;
+  color: white !important;
+  border-radius: 8px;
+  padding: 10px;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* COLUMNA DERECHA (Formulario / Galería) */
+.form {
+  flex: 2;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #007b91;
+  outline: none;
+}
+
+/* Botones de acción */
+.saveBtn {
+  background: #007b91;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-end;
+  transition: background 0.3s;
+}
+
+.saveBtn:hover {
+  background: #005f70;
+}
+
+/* --- GALERÍAS --- */
+.gallery {
+  flex: 2;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gallery h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 14px;
+  width: 100%;
+  justify-items: center;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.thumb:hover {
+  border-color: #007b91;
+  transform: scale(1.05);
+}
+
+.active {
+  border-color: #007b91;
+  box-shadow: 0 0 8px rgba(0, 123, 145, 0.6);
+}

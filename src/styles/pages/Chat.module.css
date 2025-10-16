@@ -1,7 +1,7 @@
 .principal {
   display: flex;
   height: 100dvh;
-  background: url("../../assets/images/backgrounds/fondo-pruebas.png") center/cover no-repeat;
+  background: url("../../assets/images/backgrounds/bg1.png") center/cover no-repeat;
 }
 
 .chatLayout {

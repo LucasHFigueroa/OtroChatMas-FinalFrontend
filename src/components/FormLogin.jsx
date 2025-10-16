@@ -34,7 +34,7 @@ const FormLogin = () => {
       localStorage.setItem("isLoggedIn", "true")
       setTimeout(() => {
         navigate("/chat")
-      }, 3000)
+      }, 2000)
 
     } else {
       const newAttempts = attempts + 1

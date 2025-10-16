@@ -43,6 +43,39 @@ const ChatProvider = ({children}) => {
             { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00" }
           ]
         },
+        {
+          id: 3,
+          name: "Carlos WiFi",
+          status: "online",
+          lastSeen: "",
+          avatar: avatar3,
+          messages: [
+            { id: 1, text: "Me desconecto si no hay señal 👀", time: "10:25" },
+            { id: 2, text: "¿Probaste apagar y volver a prender el router?", time: "10:27" },
+          ],
+        },
+        {
+          id: 4,
+          name: "Luna Panqueque",
+          status: "away",
+          lastSeen: "5 minutes ago",
+          avatar: avatar4,
+          messages: [
+            { id: 1, text: "Estoy cocinando, no me hablen 😋", time: "19:40" },
+            { id: 2, text: "Ok... sí, se me quemó uno 🙃", time: "19:42" },
+          ],
+        },
+        {
+          id: 5,
+          name: "Tito Memez",
+          status: "offline",
+          lastSeen: "1 hour ago",
+          avatar: avatar5,
+          messages: [
+            { id: 1, text: "Te mandé el meme, pero no te rías tan fuerte 🤣", time: "17:00" },
+            { id: 2, text: "¿Viste el del gato programador?", time: "17:05" },
+          ],
+        },
       ]
       setUsers(initialUsers)
       localStorage.setItem("users", JSON.stringify(initialUsers))

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styles from "../styles/components/FormRegister.module.css"
+import avatar1 from "../assets/images/avatars/avatar1.png"
 
 const FormRegister = () => {
   const [username, setUsername] = useState("")
@@ -11,6 +12,8 @@ const FormRegister = () => {
   setShowPassword(!showPassword)
   }
 
+  const defaultAvatar = avatar1
+
   const handleSubmit = (e) => {
   e.preventDefault()
   alert("Formulario enviado")
@@ -20,6 +23,7 @@ const FormRegister = () => {
   username,
   email,
   password,
+  avatar: defaultAvatar,
   }
 
   // Guardar en localStorage
