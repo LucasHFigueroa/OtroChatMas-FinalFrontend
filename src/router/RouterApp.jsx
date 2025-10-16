@@ -10,7 +10,7 @@
 
   const RouterApp = () => {
     return (
-      <BrowserRouter basename="/OtroChatMas-FinalFrontend">
+      <BrowserRouter>
         <Routes>
           <Route 
             path="/chat" 
