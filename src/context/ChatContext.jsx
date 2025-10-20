@@ -4,19 +4,22 @@ import avatar2 from "../assets/images/avatars/avatar2.png"
 import avatar3 from "../assets/images/avatars/avatar3.png"
 import avatar4 from "../assets/images/avatars/avatar4.png"
 import avatar5 from "../assets/images/avatars/avatar5.png"
-import avatar6 from "../assets/images/avatars/avatar6.png"
-import avatar7 from "../assets/images/avatars/avatar7.png"
-import avatar8 from "../assets/images/avatars/avatar8.png"
 
-const ChatContext = createContext ()
+const ChatContext = createContext()
 
-const ChatProvider = ({children}) => {
-  const [users, setUsers] = useState ([])
-  const [selectedUser, setSelectedUser] = useState (null)
+const ChatProvider = ({ children }) => {
+  const [users, setUsers] = useState([])
+  const [selectedUser, setSelectedUser] = useState(null)
 
+  // 🔹 Nuevo estado global para el fondo del chat
+  const [background, setBackground] = useState("")
+
+  // Cargar usuarios y fondo desde localStorage
   useEffect(() => {
     const storedUsers = localStorage.getItem("users")
+    const storedUserData = JSON.parse(localStorage.getItem("userData"))
 
+    // Usuarios
     if (storedUsers !== null) {
       setUsers(JSON.parse(storedUsers))
     } else {
@@ -27,9 +30,7 @@ const ChatProvider = ({children}) => {
           status: "online",
           lastSeen: "",
           avatar: avatar1,
-          messages: [
-            { id: 1, text: "Hola, como estás?", time: "12:00" }
-          ],
+          messages: [{ id: 1, text: "Hola, como estás?", time: "12:00" }],
         },
         {
           id: 2,
@@ -40,8 +41,8 @@ const ChatProvider = ({children}) => {
           messages: [
             { id: 1, text: "RESPONDEEEE QUE TENGO HAMBREE!", time: "15:00" },
             { id: 2, text: "estoy desde las 12 en el banco!!", time: "15:10" },
-            { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00" }
-          ]
+            { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00" },
+          ],
         },
         {
           id: 3,
@@ -80,16 +81,33 @@ const ChatProvider = ({children}) => {
       setUsers(initialUsers)
       localStorage.setItem("users", JSON.stringify(initialUsers))
     }
+
+    // Fondo
+    if (storedUserData?.background) {
+      setBackground(storedUserData.background)
+    }
   }, [])
 
+  // Guardar cambios del fondo en localStorage automáticamente
   useEffect(() => {
-    if (users.length > 0) {
-      localStorage.setItem("users", JSON.stringify(users))
+    if (background) {
+      const storedUser = JSON.parse(localStorage.getItem("userData")) || {}
+      storedUser.background = background
+      localStorage.setItem("userData", JSON.stringify(storedUser))
     }
-  }, [users])
+  }, [background])
 
   return (
-    <ChatContext.Provider value={{ users, setUsers, selectedUser, setSelectedUser }}>
+    <ChatContext.Provider
+      value={{
+        users,
+        setUsers,
+        selectedUser,
+        setSelectedUser,
+        background,
+        setBackground,
+      }}
+    >
       {children}
     </ChatContext.Provider>
   )

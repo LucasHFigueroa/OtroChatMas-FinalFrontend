@@ -12,6 +12,7 @@
     return (
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Landing />} />
           <Route 
             path="/chat" 
           element={
@@ -19,7 +20,6 @@
               <Chat />
             </ProtectedRoute>
           }/>
-          <Route path="/" element={<Landing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

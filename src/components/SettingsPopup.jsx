@@ -1,3 +1,4 @@
+import { useChat } from "../context/ChatContext"
 import { useState, useEffect } from "react"
 import styles from "../styles/components/SettingsPopup.module.css"
 
@@ -10,11 +11,13 @@ import avatar5 from "../assets/images/avatars/avatar5.png"
 
 // Fondos
 import bg1 from "../assets/images/backgrounds/bg1.png"
+import bg2 from "../assets/images/backgrounds/bg2.png"
 
 const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5]
-const backgrounds = [bg1]
+const backgrounds = [bg1, bg2]
 
 const SettingsPopup = ({ onClose }) => {
+  const { setBackground } = useChat()
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -23,47 +26,48 @@ const SettingsPopup = ({ onClose }) => {
     background: "",
   })
 
+  const [editedUser, setEditedUser] = useState(user)
   const [showAvatarGallery, setShowAvatarGallery] = useState(false)
   const [showBgGallery, setShowBgGallery] = useState(false)
-  const [confirmPassword, setConfirmPassword] = useState("")
 
   // Cargar datos del usuario guardados
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("userData"))
-    if (storedUser) setUser(storedUser)
+    if (storedUser) {
+      setUser(storedUser)
+      setEditedUser(storedUser)
+    }
   }, [])
+
+  useEffect(() => {
+    setEditedUser(user)
+  }, [user])
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setUser({ ...user, [name]: value })
+    setEditedUser({ ...editedUser, [name]: value })
   }
 
   const handleAvatarSelect = (avatar) => {
-    setUser({ ...user, avatar })
-    setShowAvatarGallery(false)
+    setEditedUser({ ...editedUser, avatar })
   }
 
   const handleBackgroundSelect = (bg) => {
-    setUser({ ...user, background: bg })
-    setShowBgGallery(false)
+    setEditedUser({ ...editedUser, background: bg })
   }
 
   const handleSave = () => {
-    if (confirmPassword && confirmPassword !== user.password) {
-      alert("Las contraseñas no coinciden.")
-      return
-    }
-    localStorage.setItem("userData", JSON.stringify(user))
+    localStorage.setItem("userData", JSON.stringify(editedUser))
     alert("Cambios guardados correctamente.")
-    onClose()
+    setUser(editedUser)
+    setBackground(editedUser.background)
   }
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn")
     window.location.href = "/"
   }
-
-
+  
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -125,10 +129,13 @@ const SettingsPopup = ({ onClose }) => {
                     src={a}
                     alt={`avatar-${i}`}
                     onClick={() => handleAvatarSelect(a)}
-                    className={`${styles.thumb} ${user.avatar === a ? styles.active : ""}`}
+                    className={`${styles.thumb} ${editedUser.avatar === a ? styles.active : ""}`}
                   />
                 ))}
               </div>
+              <button className={styles.saveBtn} onClick={handleSave}>
+                <i className="fa fa-save"></i> Guardar cambios
+              </button>
             </div>
           )}
 
@@ -143,10 +150,13 @@ const SettingsPopup = ({ onClose }) => {
                     src={b}
                     alt={`bg-${i}`}
                     onClick={() => handleBackgroundSelect(b)}
-                    className={`${styles.thumb} ${user.background === b ? styles.active : ""}`}
+                    className={`${styles.thumb} ${editedUser.background === b ? styles.active : ""}`}
                   />
                 ))}
               </div>
+              <button className={styles.saveBtn} onClick={handleSave}>
+                <i className="fa fa-save"></i> Guardar cambios
+              </button>
             </div>
           )}
 
@@ -157,28 +167,22 @@ const SettingsPopup = ({ onClose }) => {
               <input
                 type="text"
                 name="username"
-                value={user.username}
+                value={editedUser.username}
                 onChange={handleChange}
               />
               <label>Email</label>
               <input
                 type="email"
                 name="email"
-                value={user.email}
+                value={editedUser.email}
                 onChange={handleChange}
               />
               <label>Contraseña</label>
               <input
                 type="password"
                 name="password"
-                value={user.password}
+                value={editedUser.password}
                 onChange={handleChange}
-              />
-              <label>Confirmar contraseña nueva</label>
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <button className={styles.saveBtn} onClick={handleSave}>
                 <i className="fa fa-save"></i> Guardar cambios

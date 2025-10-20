@@ -1,3 +1,4 @@
+
 /* Fondo oscuro translúcido */
 .overlay {
   position: fixed;
@@ -6,19 +7,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
 }
 
 /* Caja blanca central */
 .modal {
   background: #fff;
   border-radius: 16px;
-  width: 85%;
-  max-width: 900px;
+  width: 50%;
+  height: 520px;  
   overflow: hidden;
   animation: fadeIn 0.3s ease;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -37,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #b5d3e2, #d8e9ef);
+  background: linear-gradient(90deg, #a2defc, #f3f8fa);
   padding: 20px 24px;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -79,9 +81,9 @@
 }
 
 .userInfo h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "satisfy", cursive;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .userInfo p {
@@ -95,26 +97,28 @@
   border: none;
   font-size: 22px;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 /* --- BODY --- */
 .body {
+  flex: 1; 
   display: flex;
-  flex-wrap: wrap;
   padding: 20px;
   gap: 20px;
+  overflow: hidden;
+  height: 100%;
 }
+
 
 /* COLUMNA IZQUIERDA */
 .sidebar {
   flex: 1;
-  min-width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 16px;
   border-right: 1px solid #eee;
-  padding-right: 20px;
 }
 
 .sidebar button {
@@ -133,13 +137,23 @@
   color: #007b91;
 }
 
-.logout {
-  background: #c62828;
-  color: white !important;
+.sidebar .logout {
+  background-color: #c62828;
+  color: white;
   border-radius: 8px;
   padding: 10px;
   justify-content: center;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  width: 85%;
+  align-self: center;
+}
+
+.sidebar .logout:hover {
+  background-color: #a82323;
+  color: #fff;
 }
 
 /* COLUMNA DERECHA (Formulario / Galería) */
@@ -172,16 +186,16 @@ input:focus {
 
 /* Botones de acción */
 .saveBtn {
-  background: #007b91;
-  color: #fff;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 10px;
-  align-self: flex-end;
-  transition: background 0.3s;
+background: #007b91;
+color: #fff;
+padding: 10px 16px;
+border: none;
+border-radius: 8px;
+font-weight: 500;
+cursor: pointer;
+margin-top: auto;
+align-self: flex-end;
+transition: background 0.3s;
 }
 
 .saveBtn:hover {
@@ -196,6 +210,7 @@ input:focus {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: flex-start;
 }
 
 .gallery h3 {
