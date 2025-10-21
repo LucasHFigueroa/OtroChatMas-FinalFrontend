@@ -4,6 +4,7 @@ import avatar2 from "../assets/images/avatars/avatar2.png"
 import avatar3 from "../assets/images/avatars/avatar3.png"
 import avatar4 from "../assets/images/avatars/avatar4.png"
 import avatar5 from "../assets/images/avatars/avatar5.png"
+import avatar6 from "../assets/images/avatars/avatar6.png"
 
 const ChatContext = createContext()
 
@@ -11,7 +12,7 @@ const ChatProvider = ({ children }) => {
   const [users, setUsers] = useState([])
   const [selectedUser, setSelectedUser] = useState(null)
 
-  // 🔹 Nuevo estado global para el fondo del chat
+  // Nuevo estado global para el fondo del chat
   const [background, setBackground] = useState("")
 
   // Cargar usuarios y fondo desde localStorage
@@ -29,7 +30,7 @@ const ChatProvider = ({ children }) => {
           name: "Juan Perez",
           status: "online",
           lastSeen: "",
-          avatar: avatar1,
+          avatar: avatar6,
           messages: [{ id: 1, text: "Hola, como estás?", time: "12:00" }],
         },
         {

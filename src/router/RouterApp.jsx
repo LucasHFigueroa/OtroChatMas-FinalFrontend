@@ -3,6 +3,7 @@
   import Landing from "../pages/Landing"
   import NotFound from "../pages/NotFound"
   import ProtectedRoute from "../components/ProtectedRoute"
+  import Help from "../pages/Help"
 
   // conf de ruta
   // 1 - path -> la url de la ruta
@@ -21,6 +22,7 @@
             </ProtectedRoute>
           }/>
           <Route path="*" element={<NotFound />} />
+          <Route path="/help" element={<Help />} />
         </Routes>
       </BrowserRouter>
     );
