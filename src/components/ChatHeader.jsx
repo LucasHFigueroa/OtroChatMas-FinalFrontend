@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { useChat } from "../context/ChatContext"
 import SettingsPopup from "./SettingsPopup"
 import styles from "../styles/components/ChatHeader.module.css"
@@ -6,9 +7,15 @@ import styles from "../styles/components/ChatHeader.module.css"
 const ChatHeader = () => {
   const { users, selectedUser } = useChat()
   const [showSettings, setShowSettings] = useState(false) 
+  const navigate = useNavigate()
 
   const user = users.find((u) => u.id === selectedUser)
   if (!user) return null
+
+  const handleHelpClick = () => {
+    const helpUrl = `${window.location.origin}/help`
+    window.open(helpUrl, "_blank")
+  } 
 
   return (
     <>
@@ -41,7 +48,10 @@ const ChatHeader = () => {
           >
             <i className="fa fa-cogs" />
           </button>
-          <button title="Ayuda">
+          <button 
+            title="Centro de Ayuda"
+            onClick={handleHelpClick}
+          >
             <i className="fa fa-question" />
           </button>
         </div>
