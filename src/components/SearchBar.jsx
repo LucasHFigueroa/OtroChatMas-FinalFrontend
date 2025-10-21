@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }) => {
       </button>
       <input
         type="search"
-        placeholder="Buscar contacto..."
+        placeholder="Buscá un vecino..."
         id={styles.searchInput}
         onChange={handleChange}
       />

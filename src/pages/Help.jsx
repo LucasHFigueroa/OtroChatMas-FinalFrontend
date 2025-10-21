@@ -1,6 +1,9 @@
 import styles from "../styles/pages/Help.module.css"
 import bannerHelp from "../assets/images/help/Banner-Help.png"
-import ScreenshotLogin from "../assets/images/help/screenshot-login.png"
+import loginImg from "../assets/images/help/login-gif.gif"
+import yoImg from "../assets/images/help/yochatmas.png"
+import chatImg from "../assets/images/help/screenshot-chat.png"
+import popupGif from "../assets/images/help/popup-gif.gif"
 
 
 const Help = () => {
@@ -39,14 +42,22 @@ const Help = () => {
           </ol>
         </div>
         <div className={styles.imageColumn}>
-          <div className={styles.imagePlaceholder}>Captura: pantalla de Login / Registro</div>
+          <img 
+            src={loginImg} 
+            alt="Pantalla de Login y Registro de usuarios" 
+            className={styles.featureImage}
+          />       
         </div>
       </section>
 
       {/* SECCIÓN 2 - INTERFAZ DEL CHAT */}
       <section className={styles.featureSectionAlt}>
         <div className={styles.imageColumn}>
-          <div className={styles.imagePlaceholder}>Captura: vista del Chat y lista de usuarios</div>
+          <img 
+            src={chatImg} 
+            alt="Vista del Chat y lista de usuarios" 
+            className={styles.featureImage}
+          />
         </div>
         <div className={styles.textColumn}>
           <span className={styles.tag}>INTERFAZ</span>
@@ -58,7 +69,7 @@ const Help = () => {
           <ul>
             <li>Filtrado dinámico de contactos por nombre.</li>
             <li>Estados de conexión (en línea / desconectado).</li>
-            <li>Persistencia de mensajes gracias a <strong>useContext</strong> y <strong>useEffect</strong>.</li>
+            <li>Persistencia de mensajes.</li>
           </ul>
         </div>
       </section>
@@ -79,7 +90,11 @@ const Help = () => {
           </ul>
         </div>
         <div className={styles.imageColumn}>
-          <div className={styles.imagePlaceholder}>Captura: ventana de configuración</div>
+          <img 
+            src={popupGif} 
+            alt="Vista del Chat y lista de usuarios" 
+            className={styles.featureImage}
+          />        
         </div>
       </section>
 
@@ -94,10 +109,11 @@ const Help = () => {
           <p>El proyecto fue desarrollado con un enfoque modular y moderno.</p>
           <ul>
             <li><strong>React + Vite</strong> — entorno rápido y escalable.</li>
-            <li><strong>React Router DOM</strong> — navegación y rutas protegidas.</li>
             <li><strong>CSS Modules</strong> — estilos encapsulados.</li>
-            <li><strong>LocalStorage</strong> — persistencia local de datos.</li>
             <li><strong>Font Awesome</strong> — íconos y recursos visuales.</li>
+            <li><strong>Photoshop</strong> — armado de fondos y recursos gráficos.</li>
+            <li><strong>Canva</strong> — Ilustraciones y dibujos.</li>
+            <li><strong>ChatGPT</strong> — Asistente de IA, para múltiples tareas.</li>
           </ul>
         </div>
       </section>
@@ -109,7 +125,7 @@ const Help = () => {
           <h2>Sobre mí</h2>
           <p>
             ¡Hola! Soy <strong>Lucas H. Figueroa</strong>, estudiante de <strong>Diseño UX/UI</strong> y 
-            desarrollo <strong>Frontend</strong>. Este proyecto fue realizado como parte de mi cursada 
+            desarrollo <strong>Full Stack</strong>. Este proyecto fue realizado como parte de mi cursada 
             en la <strong>Universidad Tecnológica Nacional (UTN)</strong>.
           </p>
           <p>
@@ -124,7 +140,11 @@ const Help = () => {
           </ul>
         </div>
         <div className={styles.imageColumn}>
-          <div className={styles.imagePlaceholder}>📸 Aquí irá una foto o GIF del autor</div>
+          <img 
+            src={yoImg} 
+            alt="Esta es una ilustración mía, al estilo de Otro Chat Más" 
+            className={styles.featureImageMia}
+          />  
         </div>
       </section>
 

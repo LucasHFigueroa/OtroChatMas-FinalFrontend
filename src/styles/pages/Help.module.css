@@ -6,6 +6,28 @@
   overflow-x: hidden;
 }
 
+.helpPage h2 {
+  color: #007b91;
+  margin-bottom: 12px;
+}
+
+.helpPage p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.helpPage ul,
+.helpPage ol {
+  padding-left: 20px;
+  color: #444;
+}
+
+.helpPage ul li,
+.helpPage ol li {
+  margin-bottom: 8px;
+}
+
 /* ---------- BANNER ---------- */
 .bannerSection {
   position: relative;
@@ -80,17 +102,24 @@
   line-height: 1.7;
 }
 
-.imagePlaceholder {
-  width: 90%;
-  height: 280px;
-  background-image: #d9e7eb;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #004d5e;
-  font-weight: 600;
-  font-size: 1rem;
+.featureImage {
+  width: 100%;
+  max-width: 480px;
+    border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureImage:hover {
+  transform: scale(1.4);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.featureImageMia {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
 }
 
 /* ---------- FEATURES SECTIONS ---------- */
@@ -126,26 +155,6 @@
   padding: 4px 10px;
   border-radius: 6px;
   margin-bottom: 12px;
-}
-
-h2 {
-  color: #007b91;
-  margin-bottom: 12px;
-}
-
-p {
-  margin-bottom: 12px;
-  line-height: 1.6;
-  color: #333;
-}
-
-ul, ol {
-  padding-left: 20px;
-  color: #444;
-}
-
-ul li, ol li {
-  margin-bottom: 8px;
 }
 
 /* ---------- FOOTER ---------- */
