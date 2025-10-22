@@ -138,7 +138,7 @@ const Help = () => {
             Esa fue la premisa.<br />
             Busqué decoraciones hogareñas y empecé por el <strong>Login</strong>.<br />
             Se me ocurrió que todos estos personajes eran parte de un mismo edificio, que eran vecinos —algo así como 
-            <strong>Habbo Hotel</strong> o <strong>Pet Society</strong>.<br /><br />
+            <strong> Habbo Hotel</strong> o <strong>Pet Society</strong>.<br /><br />
 
             Como <strong>MVP</strong>, esta primera versión cumple con los requisitos técnicos básicos para la aprobación de la cursada, 
             pero <em>Otro Chat Más</em> tiene potencial para seguir creciendo, incorporando nuevas funcionalidades y, sobre todo, 
@@ -146,7 +146,7 @@ const Help = () => {
           </p><br />   
           <ul>
             <li><i className="fa fa-map-marker"></i> Buenos Aires, Argentina</li>
-            <li><i className="fa fa-code"></i> Formación: Diseño UX/UI, React, Sass, y accesibilidad</li>
+            <li><i class="fa-solid fa-user-graduate"></i> Formación: Diseño UX/UI, Desarrollo Frontend</li>
             <li><i className="fa fa-envelope"></i>{" "}<a href="mailto:lucashernanfigueroa@gmail.com">lucashernanfigueroa@gmail.com</a></li>
             <li><i className="fa-brands fa-linkedin"></i>{" "}<a href="https://www.linkedin.com/in/lucas-hernan-figueroa" target="_blank" rel="noreferrer">linkedin.com/in/lucashernanfigueroa</a></li>
           </ul>

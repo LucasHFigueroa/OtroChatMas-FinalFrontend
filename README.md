@@ -1,12 +1,55 @@
-# React + Vite
+# 💬 Otro Chat Más
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Otro Chat Más** es una aplicación de mensajería creada como proyecto final del curso **Frontend Developer (UTN 2025)**.  
+El objetivo fue construir una interfaz funcional, aplicando conceptos de **React**, **CSS Modules** y **LocalStorage**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Descripción general
 
-## Expanding the ESLint configuration
+El proyecto comenzó como una simple maqueta en **HTML y CSS**, pero fue evolucionando hasta convertirse en una aplicación React modular, con funcionalidades reales de autenticación, persistencia de datos y navegación interna.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+La idea principal:  
+> “Es otro chat más del montón, pero es tuyo: decoralo y hacelo propio”.
+
+---
+
+## 🧩 Funcionalidades principales
+
+### 🔐 Autenticación simulada
+- Registro e inicio de sesión con **validación de usuario** y **contador de intentos**.  
+- Los datos se guardan localmente usando **LocalStorage**.  
+- Se bloquea el acceso al chat sin estar logueado (ruta protegida con **React Router DOM**).
+
+### 💬 Interfaz del chat
+- Lista dinámica de contactos con búsqueda por nombre.  
+- Persistencia de mensajes independiente por usuario usando **useContext** y **useEffect**.  
+- Cada mensaje cuenta con **ID único** y **marca temporal** (hora de envío).
+
+### ⚙️ Configuración personalizable
+- Ventana modal (popup) para modificar datos del usuario.  
+- Elección de **avatar** y **fondo del chat**.  
+- Botón para **cerrar sesión** de forma segura.  
+
+### 🧠 Centro de ayuda
+- Página informativa inspirada en el estilo *Chrome What's New*.  
+- Explica las tecnologías, el proceso y presenta al autor.  
+- Incluye capturas de pantalla e ilustraciones personalizadas.
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+| **React + Vite** | Entorno rápido y modular para desarrollo frontend. |
+| **React Router DOM** | Manejo de rutas y páginas protegidas. |
+| **CSS Modules** | Estilos encapsulados con generación automática de hash. |
+| **LocalStorage** | Persistencia de usuario y mensajes localmente. |
+| **Font Awesome** | Iconografía moderna y accesible. |
+
+---
+
+## 🧭 Demo
+
+👉 [Ver proyecto en línea](https://otrochatmas-finalfrontend.vercel.app)
+
+---
