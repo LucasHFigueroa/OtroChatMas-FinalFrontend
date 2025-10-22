@@ -4,7 +4,7 @@ import loginImg from "../assets/images/help/login-gif.gif"
 import yoImg from "../assets/images/help/yochatmas.png"
 import chatImg from "../assets/images/help/screenshot-chat.png"
 import popupGif from "../assets/images/help/popup-gif.gif"
-
+import tecnoGif from "../assets/images/help/tecnologia-gif.gif"
 
 const Help = () => {
   return (
@@ -92,7 +92,7 @@ const Help = () => {
         <div className={styles.imageColumn}>
           <img 
             src={popupGif} 
-            alt="Vista del Chat y lista de usuarios" 
+            alt="Modal de configuración de usuario" 
             className={styles.featureImage}
           />        
         </div>
@@ -101,12 +101,15 @@ const Help = () => {
       {/* SECCIÓN 4 - TECNOLOGÍAS */}
       <section className={styles.featureSectionAlt}>
         <div className={styles.imageColumn}>
-          <div className={styles.imagePlaceholder}>Captura: estructura de componentes en React</div>
+          <img 
+            src={tecnoGif} 
+            alt="Estructura del proyecto en React" 
+            className={styles.featureImage}
+          /> 
         </div>
         <div className={styles.textColumn}>
           <span className={styles.tag}>DESARROLLO</span>
           <h2>Tecnologías utilizadas</h2>
-          <p>El proyecto fue desarrollado con un enfoque modular y moderno.</p>
           <ul>
             <li><strong>React + Vite</strong> — entorno rápido y escalable.</li>
             <li><strong>CSS Modules</strong> — estilos encapsulados.</li>
@@ -114,7 +117,8 @@ const Help = () => {
             <li><strong>Photoshop</strong> — armado de fondos y recursos gráficos.</li>
             <li><strong>Canva</strong> — Ilustraciones y dibujos.</li>
             <li><strong>ChatGPT</strong> — Asistente de IA, para múltiples tareas.</li>
-          </ul>
+          </ul><br />
+          <p>Si querés ver el repositorio en <a href="https://github.com/LucasHFigueroa/OtroChatMas-FinalFrontend">GitHub te lo dejo acá.</a></p>
         </div>
       </section>
 
@@ -124,19 +128,27 @@ const Help = () => {
           <span className={styles.tag}>AUTOR</span>
           <h2>Sobre mí</h2>
           <p>
-            ¡Hola! Soy <strong>Lucas H. Figueroa</strong>, estudiante de <strong>Diseño UX/UI</strong> y 
+            ¡Hola! Soy <strong>Lucas Figueroa</strong>, estudiante de <strong>Diseño UX/UI</strong> y 
             desarrollo <strong>Full Stack</strong>. Este proyecto fue realizado como parte de mi cursada 
             en la <strong>Universidad Tecnológica Nacional (UTN)</strong>.
-          </p>
-          <p>
-            Me apasiona la intersección entre el diseño y la programación, y disfruto creando 
-            experiencias digitales claras, accesibles y visualmente agradables.  
-          </p>
+            Y quisiera contarte un poquito sobre este proyecto. Al momento de asignarles imágenes a los contactos, pude sentir que tenían personalidad y que podía seguir dándole una identidad propia al proyecto alrededor de ellos.<br /><br />
+
+            Así comenzó el proceso creativo. Se me ocurrió una idea: 
+            <em>"este es otro chat más del montón, pero es tuyo, así que podés decorarlo como quieras"</em>. 
+            Esa fue la premisa.<br />
+            Busqué decoraciones hogareñas y empecé por el <strong>Login</strong>.<br />
+            Se me ocurrió que todos estos personajes eran parte de un mismo edificio, que eran vecinos —algo así como 
+            <strong>Habbo Hotel</strong> o <strong>Pet Society</strong>.<br /><br />
+
+            Como <strong>MVP</strong>, esta primera versión cumple con los requisitos técnicos básicos para la aprobación de la cursada, 
+            pero <em>Otro Chat Más</em> tiene potencial para seguir creciendo, incorporando nuevas funcionalidades y, sobre todo, 
+            para seguir divirtiéndonos.
+          </p><br />   
           <ul>
-            <li><i className="fa fa-map-marker"></i> Tigre, Buenos Aires, Argentina</li>
-            <li><i className="fa fa-envelope"></i> lucasfigueroa@ejemplo.com</li>
-            <li><i className="fa fa-code"></i> Interés: UX/UI, React, Sass, y accesibilidad</li>
-            <li><i className="fa fa-heart"></i> Hobbies: ilustración, música y cocina</li>
+            <li><i className="fa fa-map-marker"></i> Buenos Aires, Argentina</li>
+            <li><i className="fa fa-code"></i> Formación: Diseño UX/UI, React, Sass, y accesibilidad</li>
+            <li><i className="fa fa-envelope"></i>{" "}<a href="mailto:lucashernanfigueroa@gmail.com">lucashernanfigueroa@gmail.com</a></li>
+            <li><i className="fa-brands fa-linkedin"></i>{" "}<a href="https://www.linkedin.com/in/lucas-hernan-figueroa" target="_blank" rel="noreferrer">linkedin.com/in/lucashernanfigueroa</a></li>
           </ul>
         </div>
         <div className={styles.imageColumn}>
@@ -151,7 +163,7 @@ const Help = () => {
       {/* FOOTER */}
       <footer className={styles.footer}>
         <p>Proyecto desarrollado por <strong>Lucas H. Figueroa</strong> — UTN | Curso Frontend 2025</p>
-        <p>Versión 1.0 • <a href="https://otrochatmas-finalfrontend.vercel.app" target="_blank" rel="noreferrer">Visitar sitio</a></p>
+        <p>Versión 1.0 • <a href="https://otrochatmas-finalfrontend.vercel.app" target="_blank" rel="noreferrer">Volver al sitio</a></p>
       </footer>
     </main>
   )
