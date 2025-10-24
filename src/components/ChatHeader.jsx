@@ -7,7 +7,6 @@ import styles from "../styles/components/ChatHeader.module.css"
 const ChatHeader = () => {
   const { users, selectedUser } = useChat()
   const [showSettings, setShowSettings] = useState(false) 
-  const navigate = useNavigate()
 
   const user = users.find((u) => u.id === selectedUser)
   if (!user) return null

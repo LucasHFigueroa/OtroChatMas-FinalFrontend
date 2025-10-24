@@ -1,0 +1,95 @@
+.banner {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  z-index: 3000;
+  overflow: hidden;
+  animation: slideIn 0.5s ease-out forwards, slideOut 0.6s ease-in forwards;
+  animation-delay: 0s, 3s;
+}
+
+.bannerReg {
+  width: 50% !important;
+}
+
+.text {
+  letter-spacing: 1px;
+}
+
+/* ---------- Tipos ---------- */
+.success {
+  background: linear-gradient(90deg, #00c853, #62ca67);
+}
+
+.error {
+  background: linear-gradient(90deg, #e53935, #d32f2f);
+}
+
+.info {
+  background: linear-gradient(90deg, #007b91, #0a99b3);
+}
+
+.warning {
+  background: linear-gradient(90deg, #f28b30, #ef6c00);
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* ---------- Emoji ---------- */
+.emoji {
+  font-size: 1.8rem;
+  animation: pulse 1.4s infinite;
+  transform-origin: center;
+  display: inline-block;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .banner {
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 0 0 0 12px;
+  }
+
+  .emoji {
+    font-size: 1.6rem;
+  }
+}

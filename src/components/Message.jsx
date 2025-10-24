@@ -2,7 +2,7 @@ import styles from "../styles/components/Message.module.css"
 
 const Message = ({ text, time }) => {
   return (
-    <div className={styles.messageSent}>
+    <div className={styles.messageReceived}>
       <p>{text}</p>
       <p className={styles.timestamp}>{time}</p>
       <i

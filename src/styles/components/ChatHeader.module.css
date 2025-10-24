@@ -61,33 +61,11 @@
 }
 
 .chatActions button:nth-child(2) {
-  border-color: #0d6efd;
-  color: #0d6efd;
-}
-
-.chatActions button:nth-child(2):hover {
-  background-color: #0d6efd;
-  color: #efefef;
-  cursor: pointer;
-}
-
-.chatActions button:nth-child(3) {
-  border-color: #18a3b9;
-  color: #18a3b9;
-}
-
-.chatActions button:nth-child(3):hover {
-  background-color: #18a3b9;
-  color: #efefef;
-  cursor: pointer;
-}
-
-.chatActions button:nth-child(4) {
   border-color: #ffc107;
   color: #ffc107;
 }
 
-.chatActions button:nth-child(4):hover {
+.chatActions button:nth-child(2):hover {
   background-color: #ffc107;
   color: #efefef;
   cursor: pointer;

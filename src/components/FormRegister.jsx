@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from "../styles/components/FormRegister.module.css"
 import avatar1 from "../assets/images/avatars/avatar1.png"
 
-const FormRegister = () => {
+const FormRegister = ({ onRegisterSuccess }) => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -16,8 +16,7 @@ const FormRegister = () => {
 
   const handleSubmit = (e) => {
   e.preventDefault()
-  alert("Formulario enviado")
-
+  
   // Crear un objeto con los datos del usuario
   const newUser = {
   username,
@@ -28,6 +27,8 @@ const FormRegister = () => {
 
   // Guardar en localStorage
   localStorage.setItem("userData", JSON.stringify(newUser))
+
+  if (onRegisterSuccess) onRegisterSuccess()
   }
 
   return (

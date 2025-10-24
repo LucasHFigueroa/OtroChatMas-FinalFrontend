@@ -61,7 +61,7 @@
 /* ---------- SECCIÓN DE BIENVENIDA ---------- */
 .welcomeSection {
   text-align: center;
-  padding: 80px 10% 60px;
+  padding: 20px 10% 60px;
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 }
 

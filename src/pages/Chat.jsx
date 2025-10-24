@@ -7,7 +7,7 @@ import styles from "../styles/pages/Chat.module.css";
 
 const Chat = () => {
   const { background } = useChat()
-
+  const { selectedUser } = useChat()
 
   return (
     <>
@@ -23,7 +23,7 @@ const Chat = () => {
           <ChatHeader />
           <hr />
           <MessageList />
-          <ChatFooter />
+          {selectedUser && <ChatFooter />} 
         </main>
       </section>
     </>

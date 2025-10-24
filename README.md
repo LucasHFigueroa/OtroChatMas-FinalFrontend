@@ -10,7 +10,7 @@ El objetivo fue construir una interfaz funcional, aplicando conceptos de **React
 El proyecto comenzó como una simple maqueta en **HTML y CSS**, pero fue evolucionando hasta convertirse en una aplicación React modular, con funcionalidades reales de autenticación, persistencia de datos y navegación interna.  
 
 La idea principal:  
-> “Es otro chat más del montón, pero es tuyo: decoralo y hacelo propio”.
+“Es otro chat más del montón, pero es tuyo: decoralo y hacelo propio”.
 
 ---
 
@@ -40,16 +40,16 @@ La idea principal:
 
 ## 🧱 Tecnologías utilizadas
 
-| **React + Vite** | Entorno rápido y modular para desarrollo frontend. |
-| **React Router DOM** | Manejo de rutas y páginas protegidas. |
-| **CSS Modules** | Estilos encapsulados con generación automática de hash. |
-| **LocalStorage** | Persistencia de usuario y mensajes localmente. |
-| **Font Awesome** | Iconografía moderna y accesible. |
+ **React + Vite**  Entorno rápido y modular para desarrollo frontend.
+ **React Router DOM**  Manejo de rutas y páginas protegidas. 
+ **CSS Modules**  Estilos encapsulados con generación automática de hash. 
+ **LocalStorage**  Persistencia de usuario y mensajes localmente. 
+ **Font Awesome**  Iconografía moderna y accesible. 
 
 ---
 
 ## 🧭 Demo
 
-👉 [Ver proyecto en línea](https://otrochatmas-finalfrontend.vercel.app)
+👉 [https://otrochatmas.com](https://otrochatmas-finalfrontend.vercel.app)
 
 ---
