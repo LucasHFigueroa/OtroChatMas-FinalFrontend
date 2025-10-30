@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar"
 import UserList from "./UserList"
 import styles from "../styles/components/SideBar.module.css"
 
-const SideBar = () => {
+const SideBar = ({ id }) => {
   const { users, setSelectedUser } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
 
@@ -22,7 +22,7 @@ const SideBar = () => {
   }
 
   return (
-    <aside className={styles.sidebar}>
+    <aside id={id} className={styles.sidebar}>
       <SearchBar onSearch={handleSearch} />
       <UserList users={usersToRender} onSelect={setSelectedUser} />
     </aside>

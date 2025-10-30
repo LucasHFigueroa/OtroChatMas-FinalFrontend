@@ -14,6 +14,7 @@ const ChatFooter = () => {
       id: crypto.randomUUID(),
       text: msg,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      type: "sent",
     }
 
     // Actualizamos el array de usuarios inmutablemente

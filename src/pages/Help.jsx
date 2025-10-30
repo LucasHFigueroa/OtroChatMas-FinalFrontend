@@ -146,7 +146,7 @@ const Help = () => {
           </p><br />   
           <ul>
             <li><i className="fa fa-map-marker"></i> Buenos Aires, Argentina</li>
-            <li><i class="fa-solid fa-user-graduate"></i> Formación: Diseño UX/UI, Desarrollo Frontend</li>
+            <li><i className="fa-solid fa-user-graduate"></i> Formación: Diseño UX/UI, Desarrollo Frontend</li>
             <li><i className="fa fa-envelope"></i>{" "}<a href="mailto:lucashernanfigueroa@gmail.com">lucashernanfigueroa@gmail.com</a></li>
             <li><i className="fa-brands fa-linkedin"></i>{" "}<a href="https://www.linkedin.com/in/lucas-hernan-figueroa" target="_blank" rel="noreferrer">linkedin.com/in/lucashernanfigueroa</a></li>
           </ul>

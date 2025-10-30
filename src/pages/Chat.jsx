@@ -1,29 +1,30 @@
 import { useChat } from "../context/ChatContext"
-import SideBar from "../components/SideBar";
-import ChatHeader from "../components/ChatHeader";
-import MessageList from "../components/MessageList";
-import ChatFooter from "../components/ChatFooter";
-import styles from "../styles/pages/Chat.module.css";
+import SideBar from "../components/SideBar"
+import ChatHeader from "../components/ChatHeader"
+import MessageList from "../components/MessageList"
+import ChatFooter from "../components/ChatFooter"
+import styles from "../styles/pages/Chat.module.css"
 
 const Chat = () => {
-  const { background } = useChat()
-  const { selectedUser } = useChat()
+  const { background, selectedUser} = useChat()
+  
+  const mobileClass = selectedUser ? styles.chatVisible : ''
 
   return (
     <>
       <section
-        className={styles.principal}
-        style={{
-          background: `url(${background || "../../assets/images/backgrounds/bg1.png"}) center/cover no-repeat`,
-        }}
-      >
-        <SideBar />
+        className={`${styles.principal} ${mobileClass}`}
+        style={{background: `url(${background || "../../assets/images/backgrounds/bg1.png"}) center/cover no-repeat`,
+        }}>
+        <div id="sidebarPanel" className={styles.sidebarWrapper}>
+          <SideBar id="sidebarPanel" />
+        </div>
         <hr />
-        <main className={styles.chatLayout}>
+        <main id="chatPanel" className={styles.chatLayout}>
           <ChatHeader />
           <hr />
           <MessageList />
-          {selectedUser && <ChatFooter />} 
+          {selectedUser && <ChatFooter />}
         </main>
       </section>
     </>

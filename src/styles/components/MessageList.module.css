@@ -61,3 +61,19 @@
 .selectChatImg {
   max-width: 480px;
 }
+
+@media (max-width: 578px) {
+  .chatActions {
+    display: none;
+  }
+
+  .chatActionsMobile {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .selectChat {
+    display: none;
+  }
+}

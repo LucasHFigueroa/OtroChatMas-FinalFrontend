@@ -1,129 +1,139 @@
-import { useChat } from "../context/ChatContext"
-import { useState, useEffect } from "react"
-import styles from "../styles/components/SettingsPopup.module.css"
-import NotificationBanner from "./NotificationBanner"
+import { useChat } from "../context/ChatContext";
+import { useState, useEffect } from "react";
+import styles from "../styles/components/SettingsPopup.module.css";
 
 // Avatares
-import avatar1 from "../assets/images/avatars/avatar1.png"
-import avatar2 from "../assets/images/avatars/avatar2.png"
-import avatar3 from "../assets/images/avatars/avatar3.png"
-import avatar4 from "../assets/images/avatars/avatar4.png"
-import avatar5 from "../assets/images/avatars/avatar5.png"
+import avatar1 from "../assets/images/avatars/avatar1.png";
+import avatar2 from "../assets/images/avatars/avatar2.png";
+import avatar3 from "../assets/images/avatars/avatar3.png";
+import avatar4 from "../assets/images/avatars/avatar4.png";
+import avatar5 from "../assets/images/avatars/avatar5.png";
 
 // Fondos
-import bg1 from "../assets/images/backgrounds/bg1.png"
-import bg2 from "../assets/images/backgrounds/bg2.png"
+import bg1 from "../assets/images/backgrounds/bg1.png";
+import bg2 from "../assets/images/backgrounds/bg2.png";
 
-const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5]
-const backgrounds = [bg1, bg2]
+const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5];
+const backgrounds = [bg1, bg2];
 
-const SettingsPopup = ({ onClose }) => {
-  const { setBackground } = useChat()
+const SettingsPopup = ({ onClose, onSaveSuccess = () => {} }) => {
+  const { setBackground } = useChat();
   const [user, setUser] = useState({
     username: "",
     email: "",
     password: "",
     avatar: avatar1,
     background: "",
-  })
+  });
 
-  const [editedUser, setEditedUser] = useState(user)
-  const [showAvatarGallery, setShowAvatarGallery] = useState(false)
-  const [showBgGallery, setShowBgGallery] = useState(false)
-  const [showNotification, setShowNotification] = useState(false)
+  const [editedUser, setEditedUser] = useState(user);
+  const [showAvatarGallery, setShowAvatarGallery] = useState(false);
+  const [showBgGallery, setShowBgGallery] = useState(false);
 
-  // Cargar datos guardados
+  // Cargar datos guardados del localStorage al montar
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("userData"))
+    const storedUser = JSON.parse(localStorage.getItem("userData"));
     if (storedUser) {
-      setUser(storedUser)
-      setEditedUser(storedUser)
+      setUser(storedUser);
+      setEditedUser(storedUser);
     }
-  }, [])
+  }, []);
 
+  // Mantener editedUser sincronizado si cambia user
   useEffect(() => {
-    setEditedUser(user)
-  }, [user])
+    setEditedUser(user);
+  }, [user]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setEditedUser({ ...editedUser, [name]: value })
-  }
+    const { name, value } = e.target;
+    setEditedUser({ ...editedUser, [name]: value });
+  };
 
   const handleAvatarSelect = (avatar) => {
-    setEditedUser({ ...editedUser, avatar })
-  }
+    setEditedUser({ ...editedUser, avatar });
+  };
 
   const handleBackgroundSelect = (bg) => {
-    setEditedUser({ ...editedUser, background: bg })
-  }
+    setEditedUser({ ...editedUser, background: bg });
+  };
 
   const handleSave = () => {
-    localStorage.setItem("userData", JSON.stringify(editedUser))
-    setUser(editedUser)
-    setBackground(editedUser.background)
-    setShowNotification(true)
 
-  }
+    // Guardar en localStorage
+    localStorage.setItem("userData", JSON.stringify(editedUser))
+
+    // Actualizar estado local y fondo del chat
+    setUser(editedUser);
+    setBackground(editedUser.background);
+    onSaveSuccess();
+  };
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn")
-    localStorage.removeItem("userData")
-    window.location.href = "/"
-  }
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "/";
+  };
+
+  // cierre al clickear afuera del modal
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
   return (
     <>
-      <div className={styles.overlay} onClick={onClose}>
-      {showNotification && (
-        <NotificationBanner
-          message="Cambios guardados correctamente"
-          type="info"
-        />
-      )}
-        <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-          {/* --- Encabezado --- */}
+      <div className={styles.overlay} onClick={handleOverlayClick}>
+        <div
+          className={styles.modal}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* --- Header --- */}
           <div className={styles.header}>
             <div className={styles.avatarContainer}>
               <img src={user.avatar} alt="Avatar" className={styles.avatar} />
               <button
                 className={styles.changeAvatarBtn}
                 onClick={() => {
-                  setShowAvatarGallery(true)
-                  setShowBgGallery(false)
+                  setShowAvatarGallery(true);
+                  setShowBgGallery(false);
                 }}
               >
                 <i className="fa fa-user-edit"></i>
               </button>
             </div>
+
             <div className={styles.userInfo}>
               <h2>{user.username}</h2>
               <p>{user.email}</p>
             </div>
+
             <button className={styles.closeBtn} onClick={onClose}>
               <i className="fa fa-times"></i>
             </button>
           </div>
 
-          {/* --- Cuerpo --- */}
+          {/* --- Body --- */}
           <div className={styles.body}>
             <div className={styles.sidebar}>
               <button
                 onClick={() => {
-                  setShowAvatarGallery(false)
-                  setShowBgGallery(false)
+                  setShowAvatarGallery(false);
+                  setShowBgGallery(false);
                 }}
               >
                 <i className="fa fa-pen"></i> Editar perfil
               </button>
+
               <button
                 onClick={() => {
-                  setShowBgGallery(true)
-                  setShowAvatarGallery(false)
+                  setShowBgGallery(true);
+                  setShowAvatarGallery(false);
                 }}
+                type="button"
               >
                 <i className="fa fa-image"></i> Cambiar fondo del chat
               </button>
+
               <button className={styles.logout} onClick={handleLogout}>
                 <i className="fa fa-sign-out"></i> Cerrar sesión
               </button>
@@ -146,8 +156,9 @@ const SettingsPopup = ({ onClose }) => {
                     />
                   ))}
                 </div>
+
                 <button className={styles.saveBtn} onClick={handleSave}>
-                  <i className="fa fa-save"></i> Guardar cambios
+                  <i className="fa fa-save"></i>  Guardar cambios
                 </button>
               </div>
             )}
@@ -169,13 +180,14 @@ const SettingsPopup = ({ onClose }) => {
                     />
                   ))}
                 </div>
+
                 <button className={styles.saveBtn} onClick={handleSave}>
                   <i className="fa fa-save"></i> Guardar cambios
                 </button>
               </div>
             )}
 
-            {/* --- Formulario --- */}
+            {/* --- Formulario de edición --- */}
             {!showAvatarGallery && !showBgGallery && (
               <div className={styles.form}>
                 <label>Usuario</label>
@@ -185,6 +197,7 @@ const SettingsPopup = ({ onClose }) => {
                   value={editedUser.username}
                   onChange={handleChange}
                 />
+
                 <label>Email</label>
                 <input
                   type="email"
@@ -192,6 +205,7 @@ const SettingsPopup = ({ onClose }) => {
                   value={editedUser.email}
                   onChange={handleChange}
                 />
+
                 <label>Contraseña</label>
                 <input
                   type="password"
@@ -199,7 +213,12 @@ const SettingsPopup = ({ onClose }) => {
                   value={editedUser.password}
                   onChange={handleChange}
                 />
-                <button className={styles.saveBtn} onClick={handleSave}>
+
+                <button
+                  className={styles.saveBtn}
+                  onClick={handleSave}
+                  style={{ cursor: "pointer", zIndex: 10 }}
+                >
                   <i className="fa fa-save"></i> Guardar cambios
                 </button>
               </div>
@@ -207,7 +226,8 @@ const SettingsPopup = ({ onClose }) => {
           </div>
         </div>
       </div>
-    </>)
-}
+    </>
+  );
+};
 
-export default SettingsPopup
+export default SettingsPopup;

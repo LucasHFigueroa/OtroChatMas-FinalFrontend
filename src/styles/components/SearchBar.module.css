@@ -3,7 +3,7 @@
   align-items: center;
   border: 1px solid #cccccc;
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   width: 100%;
   background-color: white;
 }
@@ -11,6 +11,7 @@
 .searchBox button {
   background-color: #e9ecef;
   border: none;
+  border-radius: 8px 0px 0px 8px;
   padding: 12px 12px;
   transition: 0.3s ease;
 }

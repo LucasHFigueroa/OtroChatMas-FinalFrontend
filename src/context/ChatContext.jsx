@@ -31,7 +31,7 @@ const ChatProvider = ({ children }) => {
           status: "online",
           lastSeen: "",
           avatar: avatar6,
-          messages: [{ id: 1, text: "Hola, como estás?", time: "12:00" }],
+          messages: [{ id: 1, text: "Hola, como estás?", time: "12:00", type: "received" }],
         },
         {
           id: 2,
@@ -40,9 +40,9 @@ const ChatProvider = ({ children }) => {
           lastSeen: "3 hours ago",
           avatar: avatar2,
           messages: [
-            { id: 1, text: "RESPONDEEEE QUE TENGO HAMBREE!", time: "15:00" },
-            { id: 2, text: "estoy desde las 12 en el banco!!", time: "15:10" },
-            { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00" },
+            { id: 1, text: "RESPONDEEEE QUE TENGO HAMBREE!", time: "15:00", type: "received" },
+            { id: 2, text: "estoy desde las 12 en el banco!!", time: "15:10", type: "received" },
+            { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00", type: "received" },
           ],
         },
         {
@@ -52,8 +52,8 @@ const ChatProvider = ({ children }) => {
           lastSeen: "",
           avatar: avatar3,
           messages: [
-            { id: 1, text: "Me desconecto si no hay señal 👀", time: "10:25" },
-            { id: 2, text: "¿Probaste apagar y volver a prender el router?", time: "10:27" },
+            { id: 1, text: "Me desconecto si no hay señal 👀", time: "10:25", type: "received" },
+            { id: 2, text: "¿Probaste apagar y volver a prender el router?", time: "10:27", type: "received" },
           ],
         },
         {
@@ -63,8 +63,8 @@ const ChatProvider = ({ children }) => {
           lastSeen: "5 minutes ago",
           avatar: avatar4,
           messages: [
-            { id: 1, text: "Estoy cocinando, no me hablen 😋", time: "19:40" },
-            { id: 2, text: "Ok... sí, se me quemó uno 🙃", time: "19:42" },
+            { id: 1, text: "Estoy cocinando, no me hablen 😋", time: "19:40", type: "received" },
+            { id: 2, text: "Ok... sí, se me quemó uno 🙃", time: "19:42", type: "received" },
           ],
         },
         {
@@ -74,8 +74,8 @@ const ChatProvider = ({ children }) => {
           lastSeen: "1 hour ago",
           avatar: avatar5,
           messages: [
-            { id: 1, text: "Te mandé el meme, pero no te rías tan fuerte 🤣", time: "17:00" },
-            { id: 2, text: "¿Viste el del gato programador?", time: "17:05" },
+            { id: 1, text: "Te mandé el meme, pero no te rías tan fuerte 🤣", time: "17:00", type: "received" },
+            { id: 2, text: "¿Viste el del gato programador?", time: "17:05", type: "received" },
           ],
         },
       ]
