@@ -80,7 +80,7 @@
   display: none;
 }
 
-@media (max-width: 578px) {
+@media (max-width: 768px) {
   .backButton {
   align-items: center;
   justify-content: center;

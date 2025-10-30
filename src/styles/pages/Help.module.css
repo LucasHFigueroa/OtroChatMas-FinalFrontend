@@ -177,7 +177,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 578px) {
+@media (max-width: 768px) {
   /* Ajuste general */
   .helpPage {
     font-size: 0.95rem;

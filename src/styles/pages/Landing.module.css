@@ -20,7 +20,7 @@
   transform: translateX(-50%);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .authContainer {
     height: 100dvh;
   }

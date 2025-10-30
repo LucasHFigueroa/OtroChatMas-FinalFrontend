@@ -62,7 +62,7 @@
   max-width: 480px;
 }
 
-@media (max-width: 578px) {
+@media (max-width: 768px) {
   .chatActions {
     display: none;
   }

@@ -254,7 +254,7 @@ transition: background 0.3s;
 /* ======================================= */
 /* --- MEDIA QUERY PARA MOBILE --- */
 /* ======================================= */
-@media (max-width: 578px) {
+@media (max-width: 768px) {
 
   .overlay {
     align-items:flex-end;
