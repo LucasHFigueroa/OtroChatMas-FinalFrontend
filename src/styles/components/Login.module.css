@@ -6,7 +6,7 @@ h1 {
   transform: rotate(-4deg);
   margin-left: 10%;
   margin-top: 20px;
-  color: #0980b7;
+  color: #005f70;
   text-shadow: -4px 4px #ffffff;
   align-self: flex-start;
 }
@@ -57,7 +57,7 @@ h2 {
 }
 
 .btnRegister:hover {
-  background: #565e64;
+  background: #a84101;
 }
 
 .apis {

@@ -17,9 +17,6 @@ const Help = () => {
 
       {/* ---------- CONTENIDO PRINCIPAL ---------- */}
       <section className={styles.welcomeSection}>
-        <h2 className={styles.welcomeTitle}>
-          ¡Bienvenido al <span>Centro de Ayuda</span>! <span className={styles.wave}>👋</span>
-        </h2>
         <p className={styles.welcomeText}>
           Aquí vas a encontrar toda la información sobre el funcionamiento de <strong>Otro Chat Más</strong>, 
           las tecnologías utilizadas y algunos consejos para aprovechar al máximo la aplicación.
@@ -135,7 +132,7 @@ const Help = () => {
 
             Así comenzó el proceso creativo. Se me ocurrió una idea: 
             <em>"este es otro chat más del montón, pero es tuyo, así que podés decorarlo como quieras"</em>. 
-            Esa fue la premisa.<br />
+            <br />
             Busqué decoraciones hogareñas y empecé por el <strong>Login</strong>.<br />
             Se me ocurrió que todos estos personajes eran parte de un mismo edificio, que eran vecinos —algo así como 
             <strong> Habbo Hotel</strong> o <strong>Pet Society</strong>.<br /><br />
