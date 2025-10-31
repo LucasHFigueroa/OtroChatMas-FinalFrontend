@@ -14,6 +14,8 @@
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="*" element={<NotFound />} />
           <Route 
             path="/chat" 
           element={
@@ -21,8 +23,6 @@
               <Chat />
             </ProtectedRoute>
           }/>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/help" element={<Help />} />
         </Routes>
       </BrowserRouter>
     );

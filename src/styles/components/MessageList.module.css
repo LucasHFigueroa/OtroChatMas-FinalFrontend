@@ -13,6 +13,12 @@
   gap: 40px;
 }
 
+.selectChat h2 {
+  font-family: "satisfy", cursive;
+  font-size: 2.5rem;
+  color: #903a1a;
+}
+
 .chatActions {
   display: flex;
   gap: 12px;
