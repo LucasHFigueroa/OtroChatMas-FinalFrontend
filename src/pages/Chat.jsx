@@ -8,7 +8,7 @@ import styles from "../styles/pages/Chat.module.css"
 const Chat = () => {
   const { background, selectedUser} = useChat()
   
-  const mobileClass = selectedUser ? styles.chatVisible : ''
+  const mobileClass = selectedUser ? styles.showChat : ''
 
   return (
     <>
@@ -22,7 +22,7 @@ const Chat = () => {
         <hr />
         <main id="chatPanel" className={styles.chatLayout}>
           <ChatHeader />
-          <hr />
+          <hr className={styles.divider} />
           <MessageList />
           {selectedUser && <ChatFooter />}
         </main>

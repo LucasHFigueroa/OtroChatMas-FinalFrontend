@@ -8,6 +8,7 @@ import avatar2 from "../assets/images/avatars/avatar2.png";
 import avatar3 from "../assets/images/avatars/avatar3.png";
 import avatar4 from "../assets/images/avatars/avatar4.png";
 import avatar5 from "../assets/images/avatars/avatar5.png";
+import avatar6 from "../assets/images/avatars/avatar6.png";
 
 // Fondos
 import bg1 from "../assets/images/backgrounds/bg1.png";
@@ -22,7 +23,7 @@ const SettingsPopup = ({ onClose, onSaveSuccess = () => {} }) => {
     username: "",
     email: "",
     password: "",
-    avatar: avatar1,
+    avatar: avatar6,
     background: "",
   });
 

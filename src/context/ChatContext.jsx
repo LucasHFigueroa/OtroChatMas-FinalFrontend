@@ -30,7 +30,7 @@ const ChatProvider = ({ children }) => {
           name: "Juan Perez",
           status: "online",
           lastSeen: "",
-          avatar: avatar6,
+          avatar: avatar1,
           messages: [{ id: 1, text: "Hola, como estás?", time: "12:00", type: "received" }],
         },
         {
