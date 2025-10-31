@@ -40,9 +40,9 @@ const ChatProvider = ({ children }) => {
           lastSeen: "3 hours ago",
           avatar: avatar2,
           messages: [
-            { id: 1, text: "RESPONDEEEE QUE TENGO HAMBREE!", time: "15:00", type: "received" },
-            { id: 2, text: "estoy desde las 12 en el banco!!", time: "15:10", type: "received" },
-            { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00", type: "received" },
+            { id: 1, text: "RESPONDEEEE QUE TENGO HAMBREE!", time: "15:00", type: "received", status: "seen" },
+            { id: 2, text: "estoy desde las 12 en el banco!!", time: "15:10", type: "received", status: "seen" },
+            { id: 3, text: "ahora voy a casa, llevo empanadas :)", time: "20:00", type: "received", status: "seen" },
           ],
         },
         {

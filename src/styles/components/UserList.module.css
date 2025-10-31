@@ -4,7 +4,13 @@
   font-weight: 400;
   padding: 12px;
   max-width: 100%;
-  align-items: center;
+  align-items: center; 
+}
+
+.contactList {
+  max-width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
 }
 
 .contact:hover {

@@ -15,6 +15,7 @@ const ChatFooter = () => {
       text: msg,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       type: "sent",
+      status: "pending",
     }
 
     // Actualizamos el array de usuarios inmutablemente
