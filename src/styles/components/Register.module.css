@@ -59,21 +59,6 @@
   background: #075579;
 }
 
-.apis {
-  margin: 12px;
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-}
-.apis svg {
-  background-color: white;
-  border-radius: 50%;
-  padding: 6px;
-}
-
-
 .bannerReg {
   width: 50% !important;
 }
@@ -102,7 +87,7 @@
   }
 
   .formContainerRegistration {
-    margin: 20px 0 40px 0;
+    margin: 20px 0 12px 0;
     width: 100%;
     max-width: 400px;
     padding: 24px 20px;
@@ -128,16 +113,5 @@
     padding: 12px;
     font-size: 1rem;
     margin-top: 12px;
-  }
-
-  .apis {
-    gap: 20px;
-    height: 32px;
-  }
-
-  .apis svg {
-    width: 40px;
-    height: 40px;
-    padding: 5px;
   }
 }

@@ -13,12 +13,12 @@
   color: #ffffff;
   z-index: 9999;
   overflow: hidden;
-  animation: slideIn 0.5s ease-out forwards, slideOut 0.6s ease-in forwards;
+  animation: slideIn 0.5s ease-out forwards, lideOut 0.6s ease-in forwards;
   animation-delay: 0s, 2s;
 }
 
 .bannerReg {
-  width: 50% !important;
+  width: 50%;
 }
 
 .text {
@@ -87,12 +87,16 @@
   .banner {
     font-size: 1rem;
     padding: 12px 20px;
-    top: 0;
+    top: 50%;
     right: 0;
-    left: auto;
-    justify-content: center;
-    width: 50%;
+    left: 0;
+    justify-content: flex-end;
+    width: 100%;
     font-size: 0.9rem;
+  }
+
+  .bannerReg {
+    width: 100%;
   }
 
   .emoji {

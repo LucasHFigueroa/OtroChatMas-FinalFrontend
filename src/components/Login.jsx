@@ -1,5 +1,5 @@
-import FormLogin from "./FormLogin";
-import styles from "../styles/components/Login.module.css";
+import FormLogin from "./FormLogin"
+import styles from "../styles/components/Login.module.css"
 
 const Login = ({ onToggleView }) => {
   return (
@@ -7,7 +7,7 @@ const Login = ({ onToggleView }) => {
       <section className={styles.layoutLogin}>
         <h1 className={styles.title}>"Otro chat más"</h1>
         <div className={styles.formContainerLogin}>
-          <h2 className={styles.subtitle}>Que bueno verte otra vez!</h2>
+          <h2 className={styles.subtitle}>Chateá con tus amigos</h2>
           <FormLogin />
           <p>O iniciá sesión con</p>
           <div className={styles.apis}>
