@@ -17,6 +17,8 @@ La idea principal:
 ## 🧩 Funcionalidades principales
 
 ### 🔐 Autenticación simulada
+- Para ingresar al chat es necesario que la primera vez registres un nombre de usuario, un mail (puede ser cualquier@cosa.com) y una contraseña presionando el botón **Tengo que registrarme!** en la pantalla de Login.
+
 - Registro e inicio de sesión con **validación de usuario** y **contador de intentos**.  
 - Los datos se guardan localmente usando **LocalStorage**.  
 - Se bloquea el acceso al chat sin estar logueado (ruta protegida con **React Router DOM**).
@@ -34,7 +36,7 @@ La idea principal:
 ### 🧠 Centro de ayuda
 - Página informativa inspirada en el estilo *Chrome What's New*.  
 - Explica las tecnologías, el proceso y presenta al autor.  
-- Incluye capturas de pantalla e ilustraciones personalizadas.
+- Incluye capturas de pantalla en formato gif.
 
 ---
 
