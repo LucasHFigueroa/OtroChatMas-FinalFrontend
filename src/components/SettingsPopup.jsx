@@ -31,7 +31,7 @@ const SettingsPopup = ({ onClose, onSaveSuccess = () => {} }) => {
   const [showAvatarGallery, setShowAvatarGallery] = useState(false);
   const [showBgGallery, setShowBgGallery] = useState(false);
 
-  // Cargar datos guardados del localStorage al montar
+  // Datos del localstorage que hice en el registro
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("userData"));
     if (storedUser) {
@@ -59,11 +59,9 @@ const SettingsPopup = ({ onClose, onSaveSuccess = () => {} }) => {
   };
 
   const handleSave = () => {
-
     // Guardar en localStorage
     localStorage.setItem("userData", JSON.stringify(editedUser))
 
-    // Actualizar estado local y fondo del chat
     setUser(editedUser);
     setBackground(editedUser.background);
     onSaveSuccess();

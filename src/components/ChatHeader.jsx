@@ -86,7 +86,7 @@ const ChatHeader = () => {
           </button>
         </div>
 
-        {/* Acciones mobile */}
+        {/* Menú Hamburguesa - Mobile */}
         <div className={styles.chatActionsMobile}>
           <button title="Menú" onClick={toggleMobileMenu}>
             <i className="fa fa-bars" />
@@ -104,15 +104,12 @@ const ChatHeader = () => {
           )}
         </div>
       </header>
-      {/* Modal de ajustes */}
       {showSettings && (
         <SettingsPopup
           onClose={() => setShowSettings(false)}
           onSaveSuccess={handleSaveSuccess}
         />
       )}
-
-      {/* Banner flotante */}
       {showNotification && (
         <NotificationBanner
           message="Cambios guardados correctamente"

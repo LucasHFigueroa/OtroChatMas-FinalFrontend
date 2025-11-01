@@ -10,8 +10,6 @@ const ChatContext = createContext()
 const ChatProvider = ({ children }) => {
   const [users, setUsers] = useState([])
   const [selectedUser, setSelectedUser] = useState(null)
-
-  // Nuevo estado global para el fondo del chat
   const [background, setBackground] = useState("")
 
   // Cargar usuarios y fondo desde localStorage
@@ -19,7 +17,6 @@ const ChatProvider = ({ children }) => {
     const storedUsers = localStorage.getItem("users")
     const storedUserData = JSON.parse(localStorage.getItem("userData"))
 
-    // Usuarios
     if (storedUsers !== null) {
       setUsers(JSON.parse(storedUsers))
     } else {

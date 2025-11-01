@@ -25,7 +25,6 @@
   letter-spacing: 1px;
 }
 
-/* ---------- Tipos ---------- */
 .success {
   background: linear-gradient(90deg, #00c853, #62ca67);
 }
@@ -40,6 +39,12 @@
 
 .warning {
   background: linear-gradient(90deg, #f28b30, #ef6c00);
+}
+
+.emoji {
+  font-size: 1.8rem;
+  transform-origin: center;
+  display: inline-block;
 }
 
 /* ---------- Animaciones ---------- */
@@ -65,13 +70,6 @@
   }
 }
 
-/* ---------- Emoji ---------- */
-.emoji {
-  font-size: 1.8rem;
-  transform-origin: center;
-  display: inline-block;
-}
-/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .banner {
     font-size: 1rem;

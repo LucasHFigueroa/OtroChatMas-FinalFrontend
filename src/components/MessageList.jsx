@@ -3,16 +3,12 @@ import { useChat } from "../context/ChatContext"
 import Message from "./Message"
 import styles from "../styles/components/MessageList.module.css"
 import selectChatImg from "../assets/images/backgrounds/seleccion-chat.png"
-
-// --- 1. IMPORTAR COMPONENTES ---
 import SettingsPopup from "./SettingsPopup"
 import NotificationBanner from "./NotificationBanner"
 
 const MessageList = () => {
   const { users, selectedUser } = useChat()
   const [showSettings, setShowSettings] = useState(false)
-  
-  // --- 2. AÑADIR ESTADO DE NOTIFICACIÓN ---
   const [showNotification, setShowNotification] = useState(false)
   
   const user = users.find((u) => u.id === selectedUser)
@@ -21,26 +17,23 @@ const MessageList = () => {
     const helpUrl = `${window.location.origin}/help`
     window.open(helpUrl, "_blank")
   }
-
-  // --- 3. AÑADIR FUNCIÓN HANDLER (copiada de ChatHeader) ---
   const handleSaveSuccess = () => {
     setShowSettings(false)
     setShowNotification(true)
     setTimeout(() => {
       setShowNotification(false)
-    }, 3000)
+    }, 5000)
   }
 
   if (!user) {
     return (
-      // --- 4. AÑADIR FRAGMENTO <> ... </> ---
       <>
         <section className={styles.messageList}>
           <header>
             <div className={styles.chatActions}>
               <button
                 title="Editar configuración"
-                onClick={() => setShowSettings(true)} // Esto ya estaba
+                onClick={() => setShowSettings(true)} 
               >
                 <i className="fa fa-cogs" />
               </button>
@@ -61,7 +54,6 @@ const MessageList = () => {
           </div>
         </section>
 
-        {/* --- 5. AÑADIR RENDERIZADO DE POPUP Y BANNER (copiado de ChatHeader) --- */}
         {showSettings && (
           <SettingsPopup
             onClose={() => setShowSettings(false)}
@@ -79,7 +71,6 @@ const MessageList = () => {
     )
   }
 
-  // Esto se mantiene igual
   return (
     <section className={styles.messageList}>
       {user.messages.map((msg) => (

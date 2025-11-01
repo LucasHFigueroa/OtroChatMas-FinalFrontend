@@ -1,14 +1,12 @@
-/* Fondo oscuro translúcido */
 .overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
-  align-items: center; /* <-- Esto centra en desktop */
+  align-items: center; 
 }
 
-/* Caja blanca central */
 .modal {
   background: #fff;
   border-radius: 16px;
@@ -33,7 +31,6 @@
   }
 }
 
-/* --- HEADER --- */
 .header {
   display: flex;
   align-items: center;
@@ -103,7 +100,6 @@
   align-self: flex-start;
 }
 
-/* --- BODY --- */
 .body {
   flex: 1;
   display: flex;
@@ -113,8 +109,6 @@
   height: 100%;
 }
 
-
-/* COLUMNA IZQUIERDA */
 .sidebar {
   flex: 1;
   display: flex;
@@ -159,7 +153,6 @@
   color: #fff;
 }
 
-/* COLUMNA DERECHA (Formulario / Galería) */
 .form {
   flex: 2;
   min-width: 280px;
@@ -207,7 +200,6 @@ transition: background 0.3s;
   background: #005f70;
 }
 
-/* --- GALERÍAS --- */
 .gallery {
   flex: 2;
   min-width: 280px;
@@ -252,18 +244,14 @@ transition: background 0.3s;
   box-shadow: 0 0 8px rgba(0, 123, 145, 0.6);
 }
 
-/* ======================================= */
-/* --- MEDIA QUERY PARA MOBILE --- */
-/* ======================================= */
 @media (max-width: 768px) {
 
   .overlay {
     align-items:flex-end;
     justify-content: flex-end;
-    z-index: 3000; /* Mantenemos centrado horizontal */
+    z-index: 3000;
   }
 
-  /* --- CORRECCIÓN 2: .modal --- */
   .modal {
     width: 100dvw;
     height: 100dvh;
@@ -288,7 +276,6 @@ transition: background 0.3s;
     }
   }
 
-  /* --- HEADER (Sin cambios, ya estaba bien) --- */
   .header {
     flex-direction: column;
     align-items: center;
@@ -340,16 +327,14 @@ transition: background 0.3s;
     font-size: 1.5rem;
   }
 
-  /* --- BODY (Sin cambios) --- */
   .body {
     flex-direction: column;
     padding: 16px;
     gap: 16px;
     overflow-y: auto;
-    height: 100%; /* 'height: 100%' aquí está bien para que el body se expanda */
+    height: 100%;
   }
 
-  /* --- SIDEBAR (Sin cambios) --- */
   .sidebar {
     flex-direction: column;
     align-items: stretch;
@@ -384,7 +369,6 @@ transition: background 0.3s;
     background: #f9f9f9;
   }
 
-  /* --- FORMULARIO / GALERÍA (Sin cambios) --- */
   .form,
   .gallery {
     flex: none;
@@ -412,7 +396,6 @@ transition: background 0.3s;
     background: #005f70;
   }
 
-  /* --- CIERRE (Sin cambios) --- */
   .closeBtn {
     position: absolute;
     top: 10px;

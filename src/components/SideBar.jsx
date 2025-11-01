@@ -13,7 +13,7 @@ const SideBar = ({ id }) => {
     setUsersToRender(users)
   }, [users])
 
-  // 🔍 función que pasa al SearchBar
+  // función que pasa al SearchBar
   const handleSearch = (searchTerm) => {
     const result = users.filter((user) =>
       user.name.toLowerCase().includes(searchTerm.toLowerCase())

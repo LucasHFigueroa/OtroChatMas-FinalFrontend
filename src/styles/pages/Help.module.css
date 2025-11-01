@@ -177,12 +177,10 @@
 }
 
 @media (max-width: 768px) {
-  /* Ajuste general */
   .helpPage {
     font-size: 1rem;
   }
 
-  /* Banner superior */
   .bannerTitle {
     font-size: 2.4rem;
     margin: 24px 10px;
@@ -194,7 +192,6 @@
     height: 200px;
   }
 
-  /* Secciones principales */
   .featureSection,
   .featureSectionAlt {
     flex-direction: column;
@@ -203,12 +200,10 @@
     text-align: center;
   }
 
-  /* Ordenar las columnas para mejor lectura */
   .featureSectionAlt .imageColumn {
-    order: 2; /* La imagen va arriba en las secciones alternas */
+    order: 2;
   }
 
-  /* Imágenes */
   .featureImage {
     max-width: 100%;
     height: auto;
@@ -217,7 +212,6 @@
     transform: none !important;
   }
 
-  /* Texto */
   .textColumn {
     order: 1;
   }
@@ -250,14 +244,12 @@
     transform: none;
   }
 
-  /* Imagen “Sobre mí” */
   .featureImageMia {
     max-width: 220px;
     margin: 0 auto;
     display: block;
   }
 
-  /* Footer */
   .footer {
     padding: 20px;
     font-size: 0.85rem;
