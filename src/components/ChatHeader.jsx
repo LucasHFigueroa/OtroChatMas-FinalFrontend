@@ -40,7 +40,7 @@ const ChatHeader = () => {
 
     setTimeout(() => {
       setShowNotification(false);
-    }, 3000);
+    }, 5000);
   };
 
   return (
@@ -117,6 +117,7 @@ const ChatHeader = () => {
         <NotificationBanner
           message="Cambios guardados correctamente"
           type="info"
+          className={styles.bannerSettings}
         />
       )}
     </>
