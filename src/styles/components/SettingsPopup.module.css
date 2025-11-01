@@ -266,7 +266,7 @@ transition: background 0.3s;
   /* --- CORRECCIÓN 2: .modal --- */
   .modal {
     width: 100dvw;
-    height: 97dvh;
+    height: 100dvh;
     border-radius: 16p;
     box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.2);
     flex-direction: column;
