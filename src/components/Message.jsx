@@ -14,7 +14,7 @@ const Message = ({ message }) => {
     if (messageType === "sent" && status === "pending") {
       const timer = setTimeout(() => {
         setStatus("seen")
-      }, 1000)
+      }, 2000)
       return () => clearTimeout(timer)
     }
   }, [messageType, status])

@@ -23,7 +23,7 @@ const FormLogin = () => {
   const storedUser = JSON.parse(localStorage.getItem("userData"))
 
     if (!storedUser) {
-    setError("No tenés cara conocida. Registrate primero.")
+      setError("No tenés cuenta. Registrate primero.")
     return
     }   
 
@@ -34,7 +34,7 @@ const FormLogin = () => {
       localStorage.setItem("isLoggedIn", "true")
       setTimeout(() => {
         navigate("/chat")
-      }, 2000)
+      }, 1500)
 
     } else {
       const newAttempts = attempts + 1

@@ -75,10 +75,6 @@
   display: inline-block;
 }
 
-.welcomeTitle span {
-  color: #f28b30;
-}
-
 .wave {
   animation: wave 1.8s infinite;
   display: inline-block;
@@ -190,6 +186,8 @@
   .bannerTitle {
     font-size: 2.4rem;
     margin: 24px 10px;
+    font-family: "Satisfy", cursive;
+    font-size: 2.6rem;
   }
 
   .bannerSection {
@@ -234,7 +232,7 @@
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 8px;
   }
 
@@ -249,7 +247,7 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: none !important;
+    transform: none;
   }
 
   /* Imagen “Sobre mí” */

@@ -316,7 +316,7 @@ transition: background 0.3s;
   .changeAvatarBtn {
     position: absolute;
     bottom: -6px;
-    right: -15%; /* Esto sigue siendo un poco frágil, pero lo dejamos por ahora */
+    right: -15%;
     background: #fff;
     border: 2px solid #007b91;
     color: #007b91;
@@ -336,6 +336,8 @@ transition: background 0.3s;
 
   .userInfo {
     padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
   }
 
   /* --- BODY (Sin cambios) --- */
@@ -353,7 +355,7 @@ transition: background 0.3s;
     align-items: stretch;
     border-bottom: 1px solid #eee;
     padding-bottom: 12px;
-    gap: 10px;
+    gap: 8px;
     border-right: none;
   }
 
@@ -387,7 +389,7 @@ transition: background 0.3s;
   .gallery {
     flex: none;
     width: 100%;
-    gap: 12px;
+    gap: 8px;
     text-align: left;
   }
 

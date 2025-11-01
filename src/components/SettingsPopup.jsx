@@ -14,7 +14,7 @@ import avatar6 from "../assets/images/avatars/avatar6.png";
 import bg1 from "../assets/images/backgrounds/bg1.png";
 import bg2 from "../assets/images/backgrounds/bg2.png";
 
-const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5];
+const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
 const backgrounds = [bg1, bg2];
 
 const SettingsPopup = ({ onClose, onSaveSuccess = () => {} }) => {
